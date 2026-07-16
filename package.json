@@ -1,0 +1,10 @@
+{
+  "name": "css-inspector",
+  "version": "0.1.0",
+  "description": "Hover ile element seçip CSS/SCSS/Tailwind olarak kopyalayan Chrome + Firefox uzantısı",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/",
+    "build": "node build.js"
+  }
+}

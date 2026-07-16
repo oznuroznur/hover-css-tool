@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>CSS Inspector demo</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 40px; background: #f9fafb; color: #111827; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 8px 16px; background-color: #3b82f6; color: #ffffff;
+    border: 1px solid #3b82f6; border-radius: 6px;
+    font-size: 14px; font-weight: 600; cursor: pointer; text-transform: uppercase;
+  }
+  .card {
+    width: 320px; margin: 24px 0; padding: 16px;
+    background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .row {
+    display: flex; flex-direction: row; justify-content: space-between;
+    align-items: center; gap: 12px; padding: 13px; background-color: #eef2ff;
+  }
+  .row > div { padding: 4px 8px; background-color: #c7d2fe; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <h1>CSS Inspector demo sayfası</h1>
+  <button class="btn" id="demo-btn">Kaydet</button>
+  <div class="card" id="demo-card">
+    <h2>Kart başlığı</h2>
+    <p>Kart içeriği — border, radius ve gölge içerir.</p>
+  </div>
+  <div class="row" id="demo-row">
+    <div>Bir</div>
+    <div>İki</div>
+    <div>Üç</div>
+  </div>
+</body>
+</html>

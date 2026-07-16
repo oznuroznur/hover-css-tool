@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "CSS Inspector",
+  "version": "0.1.0",
+  "description": "Sayfadaki bir elementi seçip CSS'ini CSS/SCSS/Tailwind olarak kopyalayın.",
+  "action": {
+    "default_title": "CSS Inspector — inspect modunu aç/kapat"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["activeTab", "scripting"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "css-inspector@oznur.dev",
+      "strict_min_version": "115.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
+}
