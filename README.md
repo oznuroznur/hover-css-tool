@@ -88,14 +88,18 @@ npx web-ext build --source-dir dist\chrome  --artifacts-dir dist --filename css-
 
 ### The AMO "do you need to submit source code?" question
 
-Firefox AMO requires separate source-code submission when the packaged code
-is minified or transpiled. **That is not needed here**: `build.js` only
-concatenates the files under `src/` as-is — no minification, transpilation
-or bundler. The code inside `dist/firefox/content.js` is line-for-line
-identical to the source and fully readable. Answer **"No"** on the
-submission form. If a reviewer still asks, provide the GitHub repo link;
-`npm run build` (requires only Node, zero dependencies) reproduces the
-package exactly.
+Answer **"Yes"**: AMO's wording explicitly covers "tools that combine
+multiple files into one", and `build.js` concatenates the `src/` files into
+`content.js` (no minification or transpilation — the bundle stays
+line-for-line readable, but it is still a combined file). Upload the source
+archive produced by:
+
+```powershell
+git archive --format=zip -o dist\css-inspector-source-0.1.0.zip HEAD
+```
+
+Build instructions for the reviewer: install Node (no npm dependencies),
+run `node build.js`, compare `dist/firefox/` with the submitted package.
 
 ## Chrome ↔ Firefox differences (developer notes)
 
