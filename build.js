@@ -40,6 +40,7 @@ function buildTarget(name, manifestFile) {
   fs.writeFileSync(path.join(dir, 'content.js'), buildContentBundle());
   fs.copyFileSync(path.join(SRC, 'background.js'), path.join(dir, 'background.js'));
   fs.copyFileSync(path.join(SRC, manifestFile), path.join(dir, 'manifest.json'));
+  fs.cpSync(path.join(__dirname, 'assets', 'icons'), path.join(dir, 'icons'), { recursive: true });
   console.log(`built dist/${name}`);
 }
 

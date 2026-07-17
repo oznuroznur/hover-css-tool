@@ -3,8 +3,18 @@
   "name": "CSS Inspector",
   "version": "0.1.0",
   "description": "Sayfadaki bir elementi seçip CSS'ini CSS/SCSS/Tailwind olarak kopyalayın.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
-    "default_title": "CSS Inspector — inspect modunu aç/kapat"
+    "default_title": "CSS Inspector — inspect modunu aç/kapat",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "background": {
     "scripts": ["background.js"]

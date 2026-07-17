@@ -77,6 +77,31 @@ için `webextension-polyfill` yerine üç satırlık
 manuel kontrol listesi: ikonla aç/kapat, hover vurgusu, üç sekmenin içeriği,
 kopyalama, Esc ile çıkış.
 
+## Mağaza yayını (Chrome Web Store / Firefox AMO)
+
+Yayın materyalleri hazır:
+
+- **İkonlar:** `assets/icons/` (16/48/128 PNG) — manifest'lere bağlı, build
+  ile `dist/*/icons/` altına kopyalanır.
+- **Ekran görüntüleri:** `assets/store/` (4 adet, 1280x800 PNG) — altyazı
+  önerileri `store/listing.md` içinde.
+- **Listeleme metinleri:** `store/listing.md` (TR + EN kısa/uzun açıklama,
+  kategori, izin gerekçeleri).
+- **Gizlilik politikası:** `PRIVACY.md` — depo GitHub'a itildikten sonra
+  dosyanın GitHub URL'i her iki mağazadaki "privacy policy URL" alanına
+  yazılabilir.
+
+### AMO "kaynak kod gerekli mi?" sorusu
+
+Firefox AMO, paketteki kod minify/transpile edilmişse ayrıca kaynak kod
+ister. Bu projede **buna gerek yok**: `build.js` yalnızca `src/` altındaki
+dosyaları olduğu gibi birleştirir (concat); minification, transpilation veya
+bundler yok. `dist/firefox/content.js` içindeki kod, `src/`'deki kaynakla
+satır satır aynı ve okunabilir. Submission formunda **"Do you need to submit
+source code?" → No** işaretlenebilir. İnceleyici yine de sorarsa GitHub depo
+linki verilir; `npm run build` (yalnızca Node gerektirir, bağımlılık yok)
+paketi birebir yeniden üretir.
+
 ## Proje yapısı
 
 ```
@@ -89,4 +114,8 @@ src/background.js, src/manifest.{chrome,firefox}.json
 build.js         bağımlılıksız build → dist/chrome, dist/firefox
 test/            node:test birim testleri
 demo/demo.html   buton + kart + flex container içeren deneme sayfası
+assets/icons/    uzantı ikonları (16/48/128)
+assets/store/    mağaza ekran görüntüleri (1280x800)
+store/listing.md mağaza listeleme metinleri (TR/EN)
+PRIVACY.md       gizlilik politikası (mağaza formları için URL kaynağı)
 ```

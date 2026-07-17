@@ -40,6 +40,7 @@
       border-radius: 0 6px 6px 6px; overflow: auto; flex: 1; min-height: 80px;
     }
     pre { margin: 0; padding: 10px; white-space: pre; }
+    pre.wrap { white-space: pre-wrap; word-break: break-word; }
     .foot { display: flex; justify-content: flex-end; padding: 8px 10px; }
     .copy {
       background: #89b4fa; border: none; border-radius: 6px; color: #11111b;
@@ -122,6 +123,7 @@
         tab.setAttribute('aria-selected', String(tab.dataset.tab === name));
       }
       this.root.querySelector('code').textContent = this.code[name];
+      this.root.querySelector('pre').classList.toggle('wrap', name === 'tailwind');
       this.copyBtn.textContent = 'Kopyala';
       this.copyBtn.classList.remove('done');
     }
