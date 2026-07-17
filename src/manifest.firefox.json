@@ -3,6 +3,7 @@
   "name": "CSS Inspector",
   "version": "0.1.0",
   "description": "Pick any element on a page and copy its styles as CSS, SCSS or Tailwind classes.",
+  "homepage_url": "https://github.com/oznuroznur/hover-css-tool",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

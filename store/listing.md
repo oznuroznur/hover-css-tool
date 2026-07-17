@@ -105,8 +105,9 @@ Sıra `assets/store/` içindeki dosya sırasıyla eşleşir.
 
 ## Form alanları için diğer bilgiler / Misc form fields
 
-- **Gizlilik politikası URL'i:** depo GitHub'a itildikten sonra
-  `https://github.com/<kullanıcı>/<repo>/blob/master/PRIVACY.md`
+- **Gizlilik politikası URL'i:**
+  `https://github.com/oznuroznur/hover-css-tool/blob/master/PRIVACY.md`
+- **Ana sayfa / Homepage:** `https://github.com/oznuroznur/hover-css-tool`
 - **İzin gerekçeleri** (Chrome "permission justification" alanları):
   - `activeTab`: "Kullanıcı ikona tıkladığında, yalnızca o sekmedeki
     elementlerin stillerini okumak için." / "To read element styles in the
