@@ -75,13 +75,15 @@ Publishing materials are ready:
   file's GitHub URL can be used in the "privacy policy URL" field of both
   stores.
 
-Both stores take a ZIP upload (manifest.json at the archive root). To
-produce them on Windows:
+Both stores take a ZIP upload (manifest.json at the archive root). Build
+the ZIPs with `web-ext build` — do **not** use PowerShell's
+`Compress-Archive`, which writes backslashes into entry paths and gets the
+upload rejected by AMO ("Invalid file name in archive"):
 
 ```powershell
 node build.js
-Compress-Archive -Path dist\chrome\*  -DestinationPath dist\css-inspector-chrome-0.1.0.zip  -Force
-Compress-Archive -Path dist\firefox\* -DestinationPath dist\css-inspector-firefox-0.1.0.zip -Force
+npx web-ext build --source-dir dist\firefox --artifacts-dir dist --filename css-inspector-firefox-0.1.0.zip --overwrite-dest
+npx web-ext build --source-dir dist\chrome  --artifacts-dir dist --filename css-inspector-chrome-0.1.0.zip  --overwrite-dest
 ```
 
 ### The AMO "do you need to submit source code?" question
