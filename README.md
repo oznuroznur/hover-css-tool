@@ -75,6 +75,15 @@ Publishing materials are ready:
   file's GitHub URL can be used in the "privacy policy URL" field of both
   stores.
 
+Both stores take a ZIP upload (manifest.json at the archive root). To
+produce them on Windows:
+
+```powershell
+node build.js
+Compress-Archive -Path dist\chrome\*  -DestinationPath dist\css-inspector-chrome-0.1.0.zip  -Force
+Compress-Archive -Path dist\firefox\* -DestinationPath dist\css-inspector-firefox-0.1.0.zip -Force
+```
+
 ### The AMO "do you need to submit source code?" question
 
 Firefox AMO requires separate source-code submission when the packaged code
