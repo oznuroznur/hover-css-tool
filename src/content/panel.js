@@ -59,7 +59,7 @@
     const { classes, unmapped } = NS.cssToTailwind(declarations);
     let out = classes.join(' ') + '\n';
     if (unmapped.length > 0) {
-      out += '\n/* eşlenemedi:\n';
+      out += '\n/* not mapped:\n';
       out += unmapped.map(([p, v]) => `   ${p}: ${v};`).join('\n');
       out += '\n*/\n';
     }
@@ -83,7 +83,7 @@
       this.root.innerHTML = `
         <div class="head">
           <span class="selector"></span>
-          <button class="close" title="Kapat (Esc)">✕</button>
+          <button class="close" title="Close (Esc)">✕</button>
         </div>
         <div class="tabs" role="tablist">
           <button class="tab" role="tab" data-tab="css">CSS</button>
@@ -91,7 +91,7 @@
           <button class="tab" role="tab" data-tab="tailwind">Tailwind</button>
         </div>
         <div class="body"><pre><code></code></pre></div>
-        <div class="foot"><button class="copy">Kopyala</button></div>
+        <div class="foot"><button class="copy">Copy</button></div>
       `;
       this.shadow.appendChild(this.root);
 
@@ -124,7 +124,7 @@
       }
       this.root.querySelector('code').textContent = this.code[name];
       this.root.querySelector('pre').classList.toggle('wrap', name === 'tailwind');
-      this.copyBtn.textContent = 'Kopyala';
+      this.copyBtn.textContent = 'Copy';
       this.copyBtn.classList.remove('done');
     }
 
@@ -147,7 +147,7 @@
           ta.remove();
         }
       }
-      this.copyBtn.textContent = ok ? 'Kopyalandı ✓' : 'Kopyalanamadı';
+      this.copyBtn.textContent = ok ? 'Copied ✓' : 'Copy failed';
       this.copyBtn.classList.toggle('done', ok);
     }
 

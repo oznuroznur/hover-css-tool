@@ -2,14 +2,14 @@
   "manifest_version": 3,
   "name": "CSS Inspector",
   "version": "0.1.0",
-  "description": "Sayfadaki bir elementi seçip CSS'ini CSS/SCSS/Tailwind olarak kopyalayın.",
+  "description": "Pick any element on a page and copy its styles as CSS, SCSS or Tailwind classes.",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   },
   "action": {
-    "default_title": "CSS Inspector — inspect modunu aç/kapat",
+    "default_title": "CSS Inspector — toggle inspect mode",
     "default_icon": {
       "16": "icons/icon16.png",
       "48": "icons/icon48.png",
